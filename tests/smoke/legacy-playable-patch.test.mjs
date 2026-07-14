@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
-import { clearLegacyLocalSaves, patchLegacyPlayableHtml, PLAYABLE_FORCED_WIPE_KEY, runOneTimePlayableForcedWipe } from '../../src/legacy-playable-patch.js';
+import { clearLegacyLocalSaves, createAndLaunchFreshPlayableSave, patchLegacyPlayableHtml, PLAYABLE_FORCED_WIPE_KEY } from '../../src/legacy-playable-patch.js';
 
 test('playable legacy patch removes small tipper, relaxes road classes, and reloads new games from iframe launchers', async () => {
   const legacy = await readFile(new URL('../../legacy/Helvetic_Freight_v1.1.5.html', import.meta.url), 'utf8');
@@ -18,6 +18,7 @@ test('playable legacy patch can force a new-game boot for iframe reloads', async
   const legacy = await readFile(new URL('../../legacy/Helvetic_Freight_v1.1.5.html', import.meta.url), 'utf8');
   const patched = patchLegacyPlayableHtml(legacy, { forceNewGame: true });
 
+  assert.match(patched, /window\.__HF_FORCE_CLEAN_START__=true;/);
   assert.match(patched, /const isNewGame=true;/);
   assert.doesNotMatch(patched, /const isNewGame=location\.hash==='#hf-new-game-v115';/);
 });
@@ -38,12 +39,12 @@ test('playable forced wipe removes legacy saves once and leaves its marker', asy
     ['unrelated', 'keep']
   ]);
 
-  assert.equal(await runOneTimePlayableForcedWipe(storage), true);
+  assert.equal(await createAndLaunchFreshPlayableSave(storage), true);
   assert.equal(storage.getItem('helveticFreightSave_stable'), null);
   assert.equal(storage.getItem('helveticFreightSave_stable_backup1'), null);
   assert.equal(storage.getItem('unrelated'), 'keep');
   assert.equal(storage.getItem(PLAYABLE_FORCED_WIPE_KEY), 'done');
-  assert.equal(await runOneTimePlayableForcedWipe(storage), false);
+  assert.equal(await createAndLaunchFreshPlayableSave(storage), false);
 });
 
 test('local save clearing only removes Helvetic Freight stable save keys', () => {

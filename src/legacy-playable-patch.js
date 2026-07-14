@@ -1,5 +1,5 @@
 const LEGACY_BUILD_URL = 'legacy/Helvetic_Freight_v1.1.5.html';
-export const PLAYABLE_FORCED_WIPE_KEY = 'helveticFreightPlayableForcedWipe_1';
+export const PLAYABLE_FORCED_WIPE_KEY = 'helveticFreightPlayableForcedWipe_2';
 const LEGACY_SAVE_KEY_PREFIX = 'helveticFreightSave_stable';
 const LEGACY_INDEXED_DB = 'helveticFreightPersistentStore';
 
@@ -30,13 +30,15 @@ function deleteLegacyIndexedDb() {
   });
 }
 
-export async function runOneTimePlayableForcedWipe(storage = globalThis.localStorage) {
+export async function createAndLaunchFreshPlayableSave(storage = globalThis.localStorage) {
   if (!storage || storage.getItem(PLAYABLE_FORCED_WIPE_KEY) === 'done') return false;
   clearLegacyLocalSaves(storage);
   await deleteLegacyIndexedDb();
   storage.setItem(PLAYABLE_FORCED_WIPE_KEY, 'done');
   return true;
 }
+
+export const runOneTimePlayableForcedWipe = createAndLaunchFreshPlayableSave;
 
 export function patchLegacyPlayableHtml(source, { forceNewGame = false } = {}) {
   let patched = source;
@@ -96,6 +98,13 @@ export function patchLegacyPlayableHtml(source, { forceNewGame = false } = {}) {
   if (forceNewGame) {
     patched = replaceRequired(
       patched,
+      'let state=window.__HF_FORCE_CLEAN_START__?freshState():(load()||freshState());',
+      `window.__HF_FORCE_CLEAN_START__=true;
+let state=window.__HF_FORCE_CLEAN_START__?freshState():(load()||freshState());`,
+      'forced clean state before save loading'
+    );
+    patched = replaceRequired(
+      patched,
       "    const isNewGame=location.hash==='#hf-new-game-v115';",
       '    const isNewGame=true;',
       'forced title new-game boot flag'
@@ -111,7 +120,7 @@ async function loadPatchedLegacyBuild() {
   try {
     const response = await fetch(LEGACY_BUILD_URL, { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const forcedWipe = await runOneTimePlayableForcedWipe();
+    const forcedWipe = await createAndLaunchFreshPlayableSave();
     const forceNewGame = forcedWipe || window.location.hash === '#hf-new-game-v115';
     frame.srcdoc = patchLegacyPlayableHtml(await response.text(), { forceNewGame });
     if (forceNewGame) history.replaceState(null, '', window.location.pathname + window.location.search);
