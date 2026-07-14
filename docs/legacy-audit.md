@@ -121,7 +121,7 @@ The audit found 60 embedded Base64 image assets:
 - 9 vehicle images.
 - MIME types: 59 WebP files and 1 PNG file.
 
-All assets are extracted losslessly by `scripts/extract-assets.mjs` into generated files under `public/assets/legacy/`, with hashes and source line numbers recorded in the generated `public/assets/legacy/manifest.json`. The generated binary files are intentionally not committed because this review system does not support binary files.
+Binary raster files cannot be committed in this review flow. Instead, `scripts/extract-assets.mjs` is the tracked text-only source of truth for extracted graphics: it losslessly decodes the immutable legacy reference into normal files under `public/assets/legacy/` and writes `public/assets/legacy/manifest.json` with hashes and source line numbers. Run `npm run assets` to materialize the folder locally; `npm run validate` regenerates and verifies every file.
 
 ## Development build scope
 
