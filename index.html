@@ -1,25 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="title-open">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Helvetic Freight Development Workspace</title>
-  <style>
-    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
-    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #17251f; color: #f8f6eb; }
-    main { width: min(680px, calc(100% - 32px)); padding: 32px; border-radius: 20px; background: #24372f; box-shadow: 0 24px 70px #0007; }
-    h1 { margin-top: 0; }
-    p { color: #d4ded8; line-height: 1.55; }
-    a { display: inline-block; margin-top: 12px; padding: 13px 18px; border-radius: 10px; background: #e68a2e; color: #171d19; text-decoration: none; font-weight: 750; }
-    code { background: #111a16; padding: 2px 6px; border-radius: 5px; }
-  </style>
+  <title>Helvetic Freight Development Build</title>
+  <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body>
-  <main>
-    <h1>Helvetic Freight</h1>
-    <p>This is the clean Codex migration workspace. The current playable build is preserved as an immutable legacy reference.</p>
-    <p>Read <code>AGENTS.md</code> and <code>CODEX_FIRST_TASK.md</code> before changing the project.</p>
-    <a href="/legacy/Helvetic_Freight_v1.1.5.html">Open legacy build</a>
-  </main>
+  <div id="titleScreen" class="title-screen">
+    <div class="title-card">
+      <p class="eyebrow">Helvetic Freight</p>
+      <h1>Logistics CH</h1>
+      <p>Structured development build that preserves the legacy gameplay surface for migration and smoke testing.</p>
+      <div class="title-actions">
+        <button id="newGame" class="btn primary">＋ New Game</button>
+        <button id="loadTitle" class="btn secondary">▶ Load Game</button>
+      </div>
+      <a href="/playable.html">Open playable legacy build</a><br><a href="/legacy/Helvetic_Freight_v1.1.5.html">Open immutable legacy reference directly</a>
+    </div>
+  </div>
+  <div id="app">
+    <section id="map" aria-label="Swiss map"></section>
+    <aside class="side">
+      <header class="topbar">
+        <div class="brand"><div class="brandmark">↔</div><div><h1>LOGISTICS</h1><small>CH</small></div></div>
+        <div class="stats"><div class="stat"><span>Cash</span><b id="cash"></b></div><div class="stat"><span>Time</span><b id="day"></b></div><div class="stat"><span>Network</span><b id="networkStat"></b></div></div>
+      </header>
+      <nav id="tabs" class="tabs"></nav>
+      <main id="content" class="content"></main>
+      <footer class="footer"><button id="saveFooter" class="btn secondary">Save</button><button id="nextHour" class="btn blue">+1 hour</button><button id="nextDay" class="btn primary">+1 day</button></footer>
+    </aside>
+  </div>
+  <div id="status" class="status" role="status">Ready.</div>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
