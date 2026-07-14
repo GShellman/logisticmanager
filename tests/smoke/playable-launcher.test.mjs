@@ -20,3 +20,9 @@ test('playable launcher executable can write a patched standalone game', async (
   assert.doesNotMatch(generated, /Kleiner Kipplaster/);
   assert.match(generated, /return v\.mode==='rail'\|\|t\.mode==='road'/);
 });
+
+test('windows command launcher starts the playable script', async () => {
+  const launcher = await readFile(new URL('../../HelveticFreight.cmd', import.meta.url), 'utf8');
+  assert.match(launcher, /scripts\\start-playable\.mjs/);
+  assert.match(launcher, /where node/);
+});
