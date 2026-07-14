@@ -1,0 +1,16 @@
+{
+  "name": "helvetic-freight",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Codex migration workspace for the Helvetic Freight logistics management game.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "validate": "node scripts/validate-legacy.mjs",
+    "test": "node scripts/validate-legacy.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
