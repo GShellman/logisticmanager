@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
-import { patchLegacyPlayableHtml } from '../../src/legacy-playable-patch.js';
+import { clearLegacyLocalSaves, patchLegacyPlayableHtml, PLAYABLE_FORCED_WIPE_KEY, runOneTimePlayableForcedWipe } from '../../src/legacy-playable-patch.js';
 
 test('playable legacy patch removes small tipper, relaxes road classes, and reloads new games from iframe launchers', async () => {
   const legacy = await readFile(new URL('../../legacy/Helvetic_Freight_v1.1.5.html', import.meta.url), 'utf8');
@@ -20,4 +20,39 @@ test('playable legacy patch can force a new-game boot for iframe reloads', async
 
   assert.match(patched, /const isNewGame=true;/);
   assert.doesNotMatch(patched, /const isNewGame=location\.hash==='#hf-new-game-v115';/);
+});
+
+class MemoryStorage {
+  constructor(entries = []) { this.map = new Map(entries); }
+  get length() { return this.map.size; }
+  key(index) { return [...this.map.keys()][index] ?? null; }
+  getItem(key) { return this.map.get(key) ?? null; }
+  setItem(key, value) { this.map.set(key, String(value)); }
+  removeItem(key) { this.map.delete(key); }
+}
+
+test('playable forced wipe removes legacy saves once and leaves its marker', async () => {
+  const storage = new MemoryStorage([
+    ['helveticFreightSave_stable', 'primary'],
+    ['helveticFreightSave_stable_backup1', 'backup'],
+    ['unrelated', 'keep']
+  ]);
+
+  assert.equal(await runOneTimePlayableForcedWipe(storage), true);
+  assert.equal(storage.getItem('helveticFreightSave_stable'), null);
+  assert.equal(storage.getItem('helveticFreightSave_stable_backup1'), null);
+  assert.equal(storage.getItem('unrelated'), 'keep');
+  assert.equal(storage.getItem(PLAYABLE_FORCED_WIPE_KEY), 'done');
+  assert.equal(await runOneTimePlayableForcedWipe(storage), false);
+});
+
+test('local save clearing only removes Helvetic Freight stable save keys', () => {
+  const storage = new MemoryStorage([
+    ['helveticFreightSave_stable_tmp', 'tmp'],
+    ['helveticFreightOther', 'keep']
+  ]);
+
+  clearLegacyLocalSaves(storage);
+  assert.equal(storage.getItem('helveticFreightSave_stable_tmp'), null);
+  assert.equal(storage.getItem('helveticFreightOther'), 'keep');
 });
