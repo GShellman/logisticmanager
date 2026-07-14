@@ -23,6 +23,7 @@ test('playable file launches the immutable legacy reference', async () => {
   const html = await readFile(new URL('../../playable.html', import.meta.url), 'utf8');
   assert.match(html, /legacy\/Helvetic_Freight_v1\.1\.5\.html/);
   assert.match(html, /<iframe/);
+  assert.match(html, /src="legacy\/Helvetic_Freight_v1\.1\.5\.html"/);
 });
 
 test('every main menu is declared for smoke navigation', () => {
