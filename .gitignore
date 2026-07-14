@@ -4,3 +4,6 @@
 
 # Generated standalone patched playable game from scripts/start-playable.mjs.
 /.playable/
+
+# Production build output from scripts/build.mjs.
+/dist/

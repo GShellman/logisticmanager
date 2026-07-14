@@ -1,4 +1,7 @@
 const LEGACY_BUILD_URL = 'legacy/Helvetic_Freight_v1.1.5.html';
+export const PLAYABLE_FORCED_WIPE_KEY = 'helveticFreightPlayableForcedWipe_2';
+const LEGACY_SAVE_KEY_PREFIX = 'helveticFreightSave_stable';
+const LEGACY_INDEXED_DB = 'helveticFreightPersistentStore';
 
 function replaceRequired(source, search, replacement, label) {
   if (!source.includes(search)) {
@@ -7,7 +10,37 @@ function replaceRequired(source, search, replacement, label) {
   return source.replace(search, replacement);
 }
 
-export function patchLegacyPlayableHtml(source) {
+export function clearLegacyLocalSaves(storage) {
+  if (!storage) return;
+  const keys = [];
+  for (let index = 0; index < storage.length; index += 1) {
+    const key = storage.key(index);
+    if (key?.startsWith(LEGACY_SAVE_KEY_PREFIX)) keys.push(key);
+  }
+  for (const key of keys) storage.removeItem(key);
+}
+
+function deleteLegacyIndexedDb() {
+  if (typeof indexedDB === 'undefined') return Promise.resolve();
+  return new Promise((resolve) => {
+    const request = indexedDB.deleteDatabase(LEGACY_INDEXED_DB);
+    request.addEventListener('success', () => resolve());
+    request.addEventListener('error', () => resolve());
+    request.addEventListener('blocked', () => resolve());
+  });
+}
+
+export async function createAndLaunchFreshPlayableSave(storage = globalThis.localStorage) {
+  if (!storage || storage.getItem(PLAYABLE_FORCED_WIPE_KEY) === 'done') return false;
+  clearLegacyLocalSaves(storage);
+  await deleteLegacyIndexedDb();
+  storage.setItem(PLAYABLE_FORCED_WIPE_KEY, 'done');
+  return true;
+}
+
+export const runOneTimePlayableForcedWipe = createAndLaunchFreshPlayableSave;
+
+export function patchLegacyPlayableHtml(source, { forceNewGame = false } = {}) {
   let patched = source;
 
   patched = replaceRequired(
@@ -52,6 +85,32 @@ export function patchLegacyPlayableHtml(source) {
     'final cargo compatibility rules'
   );
 
+  patched = replaceRequired(
+    patched,
+    `        location.hash='hf-new-game-v115';
+        location.reload();`,
+    `        location.hash='hf-new-game-v115';
+        if(window.parent&&window.parent!==window){window.parent.location.hash='hf-new-game-v115';window.parent.location.reload();}
+        else location.reload();`,
+    'title new-game reload target'
+  );
+
+  if (forceNewGame) {
+    patched = replaceRequired(
+      patched,
+      'let state=window.__HF_FORCE_CLEAN_START__?freshState():(load()||freshState());',
+      `window.__HF_FORCE_CLEAN_START__=true;
+let state=window.__HF_FORCE_CLEAN_START__?freshState():(load()||freshState());`,
+      'forced clean state before save loading'
+    );
+    patched = replaceRequired(
+      patched,
+      "    const isNewGame=location.hash==='#hf-new-game-v115';",
+      '    const isNewGame=true;',
+      'forced title new-game boot flag'
+    );
+  }
+
   return patched;
 }
 
@@ -61,7 +120,10 @@ async function loadPatchedLegacyBuild() {
   try {
     const response = await fetch(LEGACY_BUILD_URL, { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    frame.srcdoc = patchLegacyPlayableHtml(await response.text());
+    const forcedWipe = await createAndLaunchFreshPlayableSave();
+    const forceNewGame = forcedWipe || window.location.hash === '#hf-new-game-v115';
+    frame.srcdoc = patchLegacyPlayableHtml(await response.text(), { forceNewGame });
+    if (forceNewGame) history.replaceState(null, '', window.location.pathname + window.location.search);
   } catch (error) {
     console.error('Unable to prepare patched playable legacy build.', error);
     frame.src = LEGACY_BUILD_URL;
