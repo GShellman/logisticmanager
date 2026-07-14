@@ -52,6 +52,16 @@ export function patchLegacyPlayableHtml(source) {
     'final cargo compatibility rules'
   );
 
+  patched = replaceRequired(
+    patched,
+    `        location.hash='hf-new-game-v115';
+        location.reload();`,
+    `        location.hash='hf-new-game-v115';
+        if(window.parent&&window.parent!==window)window.parent.location.reload();
+        else location.reload();`,
+    'title new-game reload target'
+  );
+
   return patched;
 }
 
