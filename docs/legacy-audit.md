@@ -125,7 +125,7 @@ All assets are extracted losslessly by `scripts/extract-assets.mjs` into generat
 
 ## Development build scope
 
-The structured development build added in this task is intentionally minimal. It provides the same main surface needed for migration smoke coverage: title screen, new game, save/load, city tab, network tab, logistics tab, company tab, road construction, depot opening, extracted asset loading, and midnight production transition. It does not redesign or add gameplay; the immutable reference remains available as the complete legacy behavior source.
+`playable.html` is a text-only playable entry point that launches the immutable legacy reference in a full-window frame. The structured development build added in this task is intentionally minimal. It provides the same main surface needed for migration smoke coverage: title screen, new game, save/load, city tab, network tab, logistics tab, company tab, road construction, depot opening, extracted asset loading, and midnight production transition. It does not redesign or add gameplay; the immutable reference remains available as the complete legacy behavior source.
 
 ## Recommended extraction order for future migration
 

@@ -17,6 +17,14 @@ test('title screen markup is present', async () => {
   assert.match(html, /id="loadTitle"/);
 });
 
+
+
+test('playable file launches the immutable legacy reference', async () => {
+  const html = await readFile(new URL('../../playable.html', import.meta.url), 'utf8');
+  assert.match(html, /legacy\/Helvetic_Freight_v1\.1\.5\.html/);
+  assert.match(html, /<iframe/);
+});
+
 test('every main menu is declared for smoke navigation', () => {
   assert.deepEqual(tabs.map((tab) => tab.id), ['city', 'network', 'logistics', 'company']);
 });

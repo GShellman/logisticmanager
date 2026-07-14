@@ -3,6 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 
 const legacyPath = new URL('../legacy/Helvetic_Freight_v1.1.5.html', import.meta.url);
 const manifestPath = new URL('../public/assets/legacy/manifest.json', import.meta.url);
+const playablePath = new URL('../playable.html', import.meta.url);
 const expectedLegacySha256 = '559737fe4dfe0611afe62a2ce9629451dff28b02e44348975eff82d6d560d9c5';
 
 function sha256(value) { return createHash('sha256').update(value).digest('hex'); }
@@ -18,6 +19,11 @@ const missing = requiredMarkers.filter((marker) => !html.toLowerCase().includes(
 if (info.size < 1_000_000) throw new Error(`Legacy file is unexpectedly small: ${info.size} bytes`);
 if (digest !== expectedLegacySha256) throw new Error(`Legacy file changed. Expected ${expectedLegacySha256}, received ${digest}`);
 if (missing.length) throw new Error(`Legacy file is missing expected markers: ${missing.join(', ')}`);
+
+const playable = await readFile(playablePath, 'utf8');
+if (!playable.includes('legacy/Helvetic_Freight_v1.1.5.html') || !playable.includes('<iframe')) {
+  throw new Error('playable.html must launch the immutable legacy reference.');
+}
 
 const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 if (manifest.sourceSha256 !== expectedLegacySha256) throw new Error('Asset manifest points at a different legacy source hash.');
@@ -40,5 +46,6 @@ for (const name of fixtureNames) {
 }
 
 console.log(`Legacy reference validated: ${info.size.toLocaleString('en-US')} bytes, sha256 ${digest}`);
+console.log('Playable file validated: playable.html');
 console.log(`Extracted assets validated: ${manifest.assets.length} files`);
 console.log(`Legacy save fixtures validated: ${fixtureNames.length} files`);
