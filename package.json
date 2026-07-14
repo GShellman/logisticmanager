@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
-    "validate": "node scripts/validate-legacy.mjs",
-    "test": "node scripts/validate-legacy.mjs",
-    "build": "node scripts/build.mjs"
+    "validate": "npm run assets && node scripts/validate-legacy.mjs",
+    "test": "node --test tests/**/*.test.mjs",
+    "build": "npm run assets && node scripts/build.mjs",
+    "assets": "node scripts/extract-assets.mjs"
   },
   "engines": {
     "node": ">=20"
