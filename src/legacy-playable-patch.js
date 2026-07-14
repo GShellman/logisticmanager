@@ -7,7 +7,7 @@ function replaceRequired(source, search, replacement, label) {
   return source.replace(search, replacement);
 }
 
-export function patchLegacyPlayableHtml(source) {
+export function patchLegacyPlayableHtml(source, { forceNewGame = false } = {}) {
   let patched = source;
 
   patched = replaceRequired(
@@ -52,6 +52,25 @@ export function patchLegacyPlayableHtml(source) {
     'final cargo compatibility rules'
   );
 
+  patched = replaceRequired(
+    patched,
+    `        location.hash='hf-new-game-v115';
+        location.reload();`,
+    `        location.hash='hf-new-game-v115';
+        if(window.parent&&window.parent!==window){window.parent.location.hash='hf-new-game-v115';window.parent.location.reload();}
+        else location.reload();`,
+    'title new-game reload target'
+  );
+
+  if (forceNewGame) {
+    patched = replaceRequired(
+      patched,
+      "    const isNewGame=location.hash==='#hf-new-game-v115';",
+      '    const isNewGame=true;',
+      'forced title new-game boot flag'
+    );
+  }
+
   return patched;
 }
 
@@ -61,7 +80,9 @@ async function loadPatchedLegacyBuild() {
   try {
     const response = await fetch(LEGACY_BUILD_URL, { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    frame.srcdoc = patchLegacyPlayableHtml(await response.text());
+    const forceNewGame = window.location.hash === '#hf-new-game-v115';
+    frame.srcdoc = patchLegacyPlayableHtml(await response.text(), { forceNewGame });
+    if (forceNewGame) history.replaceState(null, '', window.location.pathname + window.location.search);
   } catch (error) {
     console.error('Unable to prepare patched playable legacy build.', error);
     frame.src = LEGACY_BUILD_URL;
