@@ -28,7 +28,16 @@ npm run validate
 npm run dev
 ```
 
-Then open the local URL shown in the terminal and choose **Open legacy build**.
+Then open the local URL shown in the terminal and choose **Open playable legacy build**.
+
+### Playable launcher
+
+For the patched playable game, use the platform launcher instead of opening the legacy HTML directly:
+
+- Windows: double-click `HelveticFreight.cmd` or run `HelveticFreight.cmd` from Command Prompt.
+- macOS/Linux: run `./HelveticFreight.exe` from a terminal.
+
+Both launchers start a local server and open the playable game in your browser. Node.js 20 or newer is required.
 
 ## Recommended Codex workflow
 
