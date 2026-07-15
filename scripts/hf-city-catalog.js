@@ -3,7 +3,7 @@
 // Each entry is an object so updates are self-documenting; the app still accepts legacy tuple entries.
 window.HF_CITY_CATALOG_SCHEMA = {
   version: 2,
-  fields: ['id', 'name', 'coordinates.lat', 'coordinates.lng', 'tier', 'slots']
+  fields: ['id', 'name', 'coordinates.lat', 'coordinates.lng', 'tier', 'slots', 'population', 'wealthFactor', 'demandProfile']
 };
 window.HF_CITY_CATALOG = [
   {
@@ -14,7 +14,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.5417
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 435000,
+    "wealthFactor": 1.28,
+    "demandProfile": "metropolis"
   },
   {
     "id": "winterthur",
@@ -24,7 +27,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.7241
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 116000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "baden",
@@ -34,7 +40,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.3079
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 20000,
+    "wealthFactor": 1.18,
+    "demandProfile": "industrial"
   },
   {
     "id": "aarau",
@@ -44,7 +53,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.0457
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 22000,
+    "wealthFactor": 1.10,
+    "demandProfile": "regional"
   },
   {
     "id": "olten",
@@ -54,7 +66,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.9033
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 19000,
+    "wealthFactor": 1.02,
+    "demandProfile": "logistics"
   },
   {
     "id": "basel",
@@ -64,7 +79,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.5886
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 178000,
+    "wealthFactor": 1.16,
+    "demandProfile": "industrial"
   },
   {
     "id": "liestal",
@@ -74,7 +92,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.7345
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 15000,
+    "wealthFactor": 1.08,
+    "demandProfile": "regional"
   },
   {
     "id": "sissach",
@@ -84,7 +105,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.808
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 7000,
+    "wealthFactor": 1.00,
+    "demandProfile": "rural"
   },
   {
     "id": "solothurn",
@@ -94,7 +118,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.5323
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 17000,
+    "wealthFactor": 1.07,
+    "demandProfile": "regional"
   },
   {
     "id": "bern",
@@ -104,7 +131,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.4474
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 134000,
+    "wealthFactor": 1.12,
+    "demandProfile": "metropolis"
   },
   {
     "id": "thun",
@@ -114,7 +144,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.628
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 44000,
+    "wealthFactor": 1.08,
+    "demandProfile": "tourism"
   },
   {
     "id": "interlaken",
@@ -124,7 +157,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.8632
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 6000,
+    "wealthFactor": 1.12,
+    "demandProfile": "tourism"
   },
   {
     "id": "spiez",
@@ -134,7 +170,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.6911
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 13000,
+    "wealthFactor": 1.08,
+    "demandProfile": "tourism"
   },
   {
     "id": "fribourg",
@@ -144,7 +183,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.1619
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 38000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "biel",
@@ -154,7 +196,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.2468
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 56000,
+    "wealthFactor": 1.04,
+    "demandProfile": "industrial"
   },
   {
     "id": "neuchatel",
@@ -164,7 +209,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.9293
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 45000,
+    "wealthFactor": 1.12,
+    "demandProfile": "regional"
   },
   {
     "id": "yverdon",
@@ -174,7 +222,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.6412
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 30000,
+    "wealthFactor": 1.02,
+    "demandProfile": "regional"
   },
   {
     "id": "lausanne",
@@ -184,7 +235,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.6323
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 141000,
+    "wealthFactor": 1.18,
+    "demandProfile": "metropolis"
   },
   {
     "id": "montreux",
@@ -194,7 +248,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.9107
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 26000,
+    "wealthFactor": 1.18,
+    "demandProfile": "tourism"
   },
   {
     "id": "vevey",
@@ -204,7 +261,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.843
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 52000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "geneva",
@@ -214,7 +274,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.1432
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 203000,
+    "wealthFactor": 1.30,
+    "demandProfile": "metropolis"
   },
   {
     "id": "nyon",
@@ -224,7 +287,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.2396
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 22000,
+    "wealthFactor": 1.24,
+    "demandProfile": "metropolis"
   },
   {
     "id": "sion",
@@ -234,7 +300,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.3606
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 35000,
+    "wealthFactor": 1.05,
+    "demandProfile": "alpine"
   },
   {
     "id": "martigny",
@@ -244,7 +313,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.0724
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 20000,
+    "wealthFactor": 1.05,
+    "demandProfile": "alpine"
   },
   {
     "id": "brig",
@@ -254,7 +326,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.9878
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 13000,
+    "wealthFactor": 1.04,
+    "demandProfile": "alpine"
   },
   {
     "id": "visp",
@@ -264,7 +339,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.882
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 8000,
+    "wealthFactor": 1.08,
+    "demandProfile": "industrial"
   },
   {
     "id": "luzern",
@@ -274,7 +352,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.3093
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 82000,
+    "wealthFactor": 1.15,
+    "demandProfile": "tourism"
   },
   {
     "id": "zug",
@@ -284,7 +365,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.5155
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 31000,
+    "wealthFactor": 1.42,
+    "demandProfile": "metropolis"
   },
   {
     "id": "schwyz",
@@ -294,7 +378,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.6527
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 15000,
+    "wealthFactor": 1.14,
+    "demandProfile": "alpine"
   },
   {
     "id": "stans",
@@ -304,7 +391,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.365
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 8500,
+    "wealthFactor": 1.12,
+    "demandProfile": "alpine"
   },
   {
     "id": "altdorf",
@@ -314,7 +404,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.6444
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 9500,
+    "wealthFactor": 1.02,
+    "demandProfile": "alpine"
   },
   {
     "id": "andermatt",
@@ -324,7 +417,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.5939
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 1500,
+    "wealthFactor": 1.20,
+    "demandProfile": "tourism"
   },
   {
     "id": "glarus",
@@ -334,7 +430,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.068
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 12500,
+    "wealthFactor": 1.03,
+    "demandProfile": "alpine"
   },
   {
     "id": "rapperswil",
@@ -344,7 +443,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.8184
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 27000,
+    "wealthFactor": 1.18,
+    "demandProfile": "tourism"
   },
   {
     "id": "uster",
@@ -354,7 +456,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.7209
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 36000,
+    "wealthFactor": 1.12,
+    "demandProfile": "metropolis"
   },
   {
     "id": "schaffhausen",
@@ -364,7 +469,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.6349
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 37000,
+    "wealthFactor": 1.07,
+    "demandProfile": "border"
   },
   {
     "id": "frauenfeld",
@@ -374,7 +482,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.8988
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 26000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "kreuzlingen",
@@ -384,7 +495,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.175
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 23000,
+    "wealthFactor": 1.05,
+    "demandProfile": "border"
   },
   {
     "id": "stgallen",
@@ -394,7 +508,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.3767
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 76000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "wil",
@@ -404,7 +521,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.0497
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 24000,
+    "wealthFactor": 1.04,
+    "demandProfile": "regional"
   },
   {
     "id": "herisau",
@@ -414,7 +534,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.2792
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 16000,
+    "wealthFactor": 1.02,
+    "demandProfile": "rural"
   },
   {
     "id": "appenzell",
@@ -424,7 +547,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.4096
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 6000,
+    "wealthFactor": 1.06,
+    "demandProfile": "tourism"
   },
   {
     "id": "chur",
@@ -434,7 +560,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.532
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 39000,
+    "wealthFactor": 1.07,
+    "demandProfile": "alpine"
   },
   {
     "id": "landquart",
@@ -444,7 +573,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.554
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 9000,
+    "wealthFactor": 1.04,
+    "demandProfile": "logistics"
   },
   {
     "id": "davos",
@@ -454,7 +586,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.836
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 11000,
+    "wealthFactor": 1.20,
+    "demandProfile": "tourism"
   },
   {
     "id": "stmoritz",
@@ -464,7 +599,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.8355
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 5000,
+    "wealthFactor": 1.38,
+    "demandProfile": "tourism"
   },
   {
     "id": "bellinzona",
@@ -474,7 +612,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.0222
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 44000,
+    "wealthFactor": 1.05,
+    "demandProfile": "regional"
   },
   {
     "id": "locarno",
@@ -484,7 +625,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.795
     },
     "tier": 2,
-    "slots": 4
+    "slots": 4,
+    "population": 16000,
+    "wealthFactor": 1.12,
+    "demandProfile": "tourism"
   },
   {
     "id": "lugano",
@@ -494,7 +638,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.9511
     },
     "tier": 3,
-    "slots": 5
+    "slots": 5,
+    "population": 63000,
+    "wealthFactor": 1.18,
+    "demandProfile": "tourism"
   },
   {
     "id": "mendrisio",
@@ -504,7 +651,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.9841
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 52000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "delémont",
@@ -514,7 +664,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.3445
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 13000,
+    "wealthFactor": 1.00,
+    "demandProfile": "rural"
   },
   {
     "id": "sursee",
@@ -524,7 +677,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.1111
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 11000,
+    "wealthFactor": 1.07,
+    "demandProfile": "regional"
   },
   {
     "id": "emmen",
@@ -534,7 +690,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.273
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 31000,
+    "wealthFactor": 1.04,
+    "demandProfile": "regional"
   },
   {
     "id": "horgen",
@@ -544,7 +703,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.5977
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 23000,
+    "wealthFactor": 1.22,
+    "demandProfile": "metropolis"
   },
   {
     "id": "wetzikon",
@@ -554,7 +716,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.7978
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 25000,
+    "wealthFactor": 1.10,
+    "demandProfile": "regional"
   },
   {
     "id": "pfaffikon",
@@ -564,7 +729,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.778
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 12000,
+    "wealthFactor": 1.20,
+    "demandProfile": "metropolis"
   },
   {
     "id": "einsiedeln",
@@ -574,7 +742,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.7443
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 14000,
+    "wealthFactor": 1.00,
+    "demandProfile": "rural"
   },
   {
     "id": "lachen",
@@ -584,7 +755,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.8543
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 9000,
+    "wealthFactor": 1.17,
+    "demandProfile": "metropolis"
   },
   {
     "id": "sarnen",
@@ -594,7 +768,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.245
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 10000,
+    "wealthFactor": 1.09,
+    "demandProfile": "alpine"
   },
   {
     "id": "arthgoldau",
@@ -604,7 +781,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.5491
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 5500,
+    "wealthFactor": 1.05,
+    "demandProfile": "logistics"
   },
   {
     "id": "fluelen",
@@ -614,7 +794,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.6218
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 2000,
+    "wealthFactor": 1.02,
+    "demandProfile": "alpine"
   },
   {
     "id": "airolo",
@@ -624,7 +807,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.611
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 1500,
+    "wealthFactor": 1.00,
+    "demandProfile": "alpine"
   },
   {
     "id": "sargans",
@@ -634,7 +820,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.4415
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 6500,
+    "wealthFactor": 1.03,
+    "demandProfile": "logistics"
   },
   {
     "id": "badragaz",
@@ -644,7 +833,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.505
     },
     "tier": 1,
-    "slots": 2
+    "slots": 2,
+    "population": 6500,
+    "wealthFactor": 1.16,
+    "demandProfile": "tourism"
   },
   {
     "id": "gossau",
@@ -654,7 +846,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.2548
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 52000,
+    "wealthFactor": 1.06,
+    "demandProfile": "regional"
   },
   {
     "id": "altstatten",
@@ -664,7 +859,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.5475
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 12000,
+    "wealthFactor": 1.01,
+    "demandProfile": "rural"
   },
   {
     "id": "romanshorn",
@@ -674,7 +872,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.3787
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 11000,
+    "wealthFactor": 1.03,
+    "demandProfile": "regional"
   },
   {
     "id": "weinfelden",
@@ -684,7 +885,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.1081
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 12000,
+    "wealthFactor": 1.04,
+    "demandProfile": "regional"
   },
   {
     "id": "bulle",
@@ -694,7 +898,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.0569
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 25000,
+    "wealthFactor": 1.04,
+    "demandProfile": "regional"
   },
   {
     "id": "payerne",
@@ -704,7 +911,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.9384
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 10000,
+    "wealthFactor": 1.00,
+    "demandProfile": "rural"
   },
   {
     "id": "morges",
@@ -714,7 +924,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.4985
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 16000,
+    "wealthFactor": 1.19,
+    "demandProfile": "metropolis"
   },
   {
     "id": "aigle",
@@ -724,7 +937,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.9686
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 11000,
+    "wealthFactor": 1.06,
+    "demandProfile": "tourism"
   },
   {
     "id": "sierre",
@@ -734,7 +950,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.5356
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 17000,
+    "wealthFactor": 1.04,
+    "demandProfile": "alpine"
   },
   {
     "id": "gland",
@@ -744,7 +963,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.2705
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 13000,
+    "wealthFactor": 1.18,
+    "demandProfile": "metropolis"
   },
   {
     "id": "lachauxdefonds",
@@ -754,7 +976,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.828
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 37000,
+    "wealthFactor": 0.98,
+    "demandProfile": "industrial"
   },
   {
     "id": "moutier",
@@ -764,7 +989,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.3691
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 7500,
+    "wealthFactor": 0.98,
+    "demandProfile": "rural"
   },
   {
     "id": "porrentruy",
@@ -774,7 +1002,10 @@ window.HF_CITY_CATALOG = [
       "lng": 7.0752
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 6500,
+    "wealthFactor": 0.98,
+    "demandProfile": "rural"
   },
   {
     "id": "chiasso",
@@ -784,7 +1015,10 @@ window.HF_CITY_CATALOG = [
       "lng": 9.0312
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 8000,
+    "wealthFactor": 1.03,
+    "demandProfile": "border"
   },
   {
     "id": "biasca",
@@ -794,7 +1028,10 @@ window.HF_CITY_CATALOG = [
       "lng": 8.9697
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 6500,
+    "wealthFactor": 0.99,
+    "demandProfile": "alpine"
   },
   {
     "id": "monthey",
@@ -804,7 +1041,10 @@ window.HF_CITY_CATALOG = [
       "lng": 6.9546
     },
     "tier": 2,
-    "slots": 3
+    "slots": 3,
+    "population": 18000,
+    "wealthFactor": 1.03,
+    "demandProfile": "industrial"
   },
   {
     "id": "renens",
@@ -814,6 +1054,9 @@ window.HF_CITY_CATALOG = [
       "lng": 6.5881
     },
     "tier": 1,
-    "slots": 3
+    "slots": 3,
+    "population": 21000,
+    "wealthFactor": 1.06,
+    "demandProfile": "metropolis"
   }
 ];

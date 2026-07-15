@@ -36,14 +36,14 @@
     aluminum: good('aluminum', 'Aluminium', '🔩', 'industrial_material', {}, demandOff(), ['general']),
     cans: good('cans', 'Konservendosen', '🥫', 'industrial_material', {}, demandOff(), ['general']),
 
-    tomatoes: good('tomatoes', 'Tomaten', '🍅', 'vegetable', {rawMaterial: true, perishable: true}, demandCanonical('common_vegetable', 1, ['zucchini'], 1), ['general'], 1.1),
-    zucchini: good('zucchini', 'Zucchini', '🥒', 'vegetable', {rawMaterial: true, perishable: true}, demandCanonical('common_vegetable', 1, ['tomatoes'], 1), ['general'], 1),
-    potatoes: good('potatoes', 'Kartoffeln', '🥔', 'vegetable', {rawMaterial: true}, demandCanonical('staple_crop', 1, ['food'], 1), ['bulk'], 0.8),
-    corn: good('corn', 'Mais', '🌽', 'vegetable', {rawMaterial: true}, demandCanonical('common_vegetable', 1, ['zucchini', 'tomatoes'], 1), ['bulk'], 0.9),
+    tomatoes: good('tomatoes', 'Tomaten', '🍅', 'vegetable', {rawMaterial: true, perishable: true}, demandCanonical('common_vegetable', 1, ['zucchini'], 1, {baseDemandPer100kKg: 138, wealthElasticity: 0.1, priceWealthSensitivity: 0.15, regionalVariance: 0.12}), ['general'], 1.1),
+    zucchini: good('zucchini', 'Zucchini', '🥒', 'vegetable', {rawMaterial: true, perishable: true}, demandCanonical('common_vegetable', 1, ['tomatoes'], 1, {baseDemandPer100kKg: 132, wealthElasticity: 0.08, priceWealthSensitivity: 0.12, regionalVariance: 0.12}), ['general'], 1),
+    potatoes: good('potatoes', 'Kartoffeln', '🥔', 'vegetable', {rawMaterial: true}, demandCanonical('staple_crop', 1, ['food'], 1, {baseDemandPer100kKg: 240, wealthElasticity: -0.05, priceWealthSensitivity: 0.05, regionalVariance: 0.1}), ['bulk'], 0.8),
+    corn: good('corn', 'Mais', '🌽', 'vegetable', {rawMaterial: true}, demandCanonical('common_vegetable', 1, ['zucchini', 'tomatoes'], 1, {baseDemandPer100kKg: 175, wealthElasticity: 0.05, priceWealthSensitivity: 0.08, regionalVariance: 0.12}), ['bulk'], 0.9),
     peas: good('peas', 'Erbsen', '🫛', 'vegetable', {rawMaterial: true}, demandOff(), ['bulk'], 0.9),
 
-    apples: good('apples', 'Äpfel', '🍎', 'fruit', {rawMaterial: true, perishable: true}, demandCanonical('common_fruit', 1, ['pears'], 1), ['general'], 1.2),
-    pears: good('pears', 'Birnen', '🍐', 'fruit', {rawMaterial: true, perishable: true}, demandCanonical('common_fruit', 1, ['apples'], 1), ['general'], 1.2),
+    apples: good('apples', 'Äpfel', '🍎', 'fruit', {rawMaterial: true, perishable: true}, demandCanonical('common_fruit', 1, ['pears'], 1, {baseDemandPer100kKg: 180, wealthElasticity: 0.12, priceWealthSensitivity: 0.18, regionalVariance: 0.14}), ['general'], 1.2),
+    pears: good('pears', 'Birnen', '🍐', 'fruit', {rawMaterial: true, perishable: true}, demandCanonical('common_fruit', 1, ['apples'], 1, {baseDemandPer100kKg: 150, wealthElasticity: 0.12, priceWealthSensitivity: 0.18, regionalVariance: 0.14}), ['general'], 1.2),
     cherries: good('cherries', 'Kirschen', '🍒', 'fruit', {rawMaterial: true, perishable: true}, {
       enabled: true,
       profile: 'niche_fruit',
@@ -53,25 +53,29 @@
       capReferenceGood: 'zucchini',
       capRatio: 0.75,
       minDailyKg: 5,
-      dailyRate: 1
+      dailyRate: 1,
+      baseDemandPer100kKg: 45,
+      wealthElasticity: 0.45,
+      priceWealthSensitivity: 0.45,
+      regionalVariance: 0.2
     }, ['general'], 1.85),
 
-    fish: good('fish', 'Fisch', '🐟', 'animal_products', {rawMaterial: true, perishable: true, refrigeratedRequired: true}, demandCanonical('fresh_food', 1, [], 1), ['refrigerated'], 3.2),
+    fish: good('fish', 'Fisch', '🐟', 'animal_products', {rawMaterial: true, perishable: true, refrigeratedRequired: true}, demandCanonical('fresh_food', 1, [], 1, {baseDemandPer100kKg: 105, wealthElasticity: 0.25, priceWealthSensitivity: 0.25, regionalVariance: 0.16}), ['refrigerated'], 3.2),
     pigs: good('pigs', 'Schweine', '🐖', 'animal_products', {rawMaterial: true}, demandOff(), ['livestock'], 2.4),
-    pork: good('pork', 'Schweinefleisch', '🥩', 'animal_products', {perishable: true, refrigeratedRequired: true}, demandCanonical('fresh_food', 0.22, ['fish'], 0.22), ['refrigerated'], 4.1),
+    pork: good('pork', 'Schweinefleisch', '🥩', 'animal_products', {perishable: true, refrigeratedRequired: true}, demandCanonical('fresh_food', 0.22, ['fish'], 0.22, {baseDemandPer100kKg: 85, wealthElasticity: 0.18, priceWealthSensitivity: 0.25, regionalVariance: 0.14}), ['refrigerated'], 4.1),
 
-    food: good('food', 'Lebensmittel', '🥫', 'processed_food', {}, demandConsumer('consumer_good'), ['general'], 3200),
-    tomato_cans: good('tomato_cans', 'Tomatenkonserven', '🍅', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14), ['general'], 2.4),
-    canned_corn: good('canned_corn', 'Maiskonserven', '🌽', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14), ['general'], 2.4),
-    canned_peas: good('canned_peas', 'Erbsenkonserven', '🫛', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14), ['general'], 2.4),
-    ravioli_meat: good('ravioli_meat', 'Ravioli mit Fleisch', '🥩', 'processed_food', {refrigeratedRequired: true}, demandCanonical('canned_food', 0.14, ['food'], 0.14), ['refrigerated'], 3.2),
-    ravioli_veg: good('ravioli_veg', 'Ravioli ohne Fleisch', '🌿', 'processed_food', {refrigeratedRequired: true}, demandCanonical('canned_food', 0.14, ['food'], 0.14), ['refrigerated'], 3),
+    food: good('food', 'Lebensmittel', '🥫', 'processed_food', {}, demandConsumer('consumer_good', 310, 0.1, 0.1), ['general'], 3200),
+    tomato_cans: good('tomato_cans', 'Tomatenkonserven', '🍅', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 7, wealthElasticity: 0.05, priceWealthSensitivity: 0.08, regionalVariance: 0.16}), ['general'], 2.4),
+    canned_corn: good('canned_corn', 'Maiskonserven', '🌽', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 6, wealthElasticity: 0.03, priceWealthSensitivity: 0.06, regionalVariance: 0.16}), ['general'], 2.4),
+    canned_peas: good('canned_peas', 'Erbsenkonserven', '🫛', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 6, wealthElasticity: 0.03, priceWealthSensitivity: 0.06, regionalVariance: 0.16}), ['general'], 2.4),
+    ravioli_meat: good('ravioli_meat', 'Ravioli mit Fleisch', '🥩', 'processed_food', {refrigeratedRequired: true}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 8, wealthElasticity: 0.22, priceWealthSensitivity: 0.25, regionalVariance: 0.16}), ['refrigerated'], 3.2),
+    ravioli_veg: good('ravioli_veg', 'Ravioli ohne Fleisch', '🌿', 'processed_food', {refrigeratedRequired: true}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 9, wealthElasticity: 0.2, priceWealthSensitivity: 0.22, regionalVariance: 0.16}), ['refrigerated'], 3),
 
-    furniture: good('furniture', 'Möbel', '🪑', 'consumer_goods', {}, demandConsumer('consumer_good'), ['general'], 4300),
-    tools: good('tools', 'Werkzeuge', '🔧', 'consumer_goods', {}, demandConsumer('consumer_good'), ['general'], 4700),
-    electronics: good('electronics', 'Elektronik', '💻', 'consumer_goods', {}, demandConsumer('consumer_good'), ['general'], 6500),
-    medicine: good('medicine', 'Medizin', '💊', 'consumer_goods', {}, demandConsumer('consumer_good'), ['general'], 6900),
-    clothing: good('clothing', 'Kleidung', '🧥', 'consumer_goods', {}, demandConsumer('consumer_good'), ['general'], 4100)
+    furniture: good('furniture', 'Möbel', '🪑', 'consumer_goods', {}, demandConsumer('consumer_good', 18, 0.35, 0.35), ['general'], 4300),
+    tools: good('tools', 'Werkzeuge', '🔧', 'consumer_goods', {}, demandConsumer('consumer_good', 16, 0.25, 0.25), ['general'], 4700),
+    electronics: good('electronics', 'Elektronik', '💻', 'consumer_goods', {}, demandConsumer('consumer_good', 10, 0.8, 0.6), ['general'], 6500),
+    medicine: good('medicine', 'Medizin', '💊', 'consumer_goods', {}, demandConsumer('consumer_good', 12, 0.35, 0.35), ['general'], 6900),
+    clothing: good('clothing', 'Kleidung', '🧥', 'consumer_goods', {}, demandConsumer('consumer_good', 22, 0.25, 0.25), ['general'], 4100)
   });
 
   const facilities = Object.freeze({
@@ -180,18 +184,19 @@
     return {enabled: false, profile: 'industrial', canonical: false, dailyRate: 0};
   }
 
-  function demandConsumer(profile) {
-    return {enabled: true, profile, canonical: false, dailyRate: 0.22};
+  function demandConsumer(profile, baseDemandPer100kKg, wealthElasticity, priceWealthSensitivity) {
+    return {enabled: true, profile, canonical: true, dailyRate: 0.22, baseDemandPer100kKg, wealthElasticity, priceWealthSensitivity, regionalVariance: 0.12};
   }
 
-  function demandCanonical(profile, ratio, referenceGoods, dailyRate) {
+  function demandCanonical(profile, ratio, referenceGoods, dailyRate, extra = {}) {
     return {
       enabled: true,
       profile,
       canonical: true,
       referenceGoods,
       ratio,
-      dailyRate
+      dailyRate,
+      ...extra
     };
   }
 
