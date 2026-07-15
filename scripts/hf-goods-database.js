@@ -64,7 +64,7 @@
     pigs: good('pigs', 'Schweine', '🐖', 'animal_products', {rawMaterial: true}, demandOff(), ['livestock'], 2.4),
     pork: good('pork', 'Schweinefleisch', '🥩', 'animal_products', {perishable: true, refrigeratedRequired: true}, demandCanonical('fresh_food', 0.22, ['fish'], 0.22, {baseDemandPer100kKg: 85, wealthElasticity: 0.18, priceWealthSensitivity: 0.25, regionalVariance: 0.14}), ['refrigerated'], 4.1),
 
-    food: good('food', 'Lebensmittel', '🥫', 'processed_food', {}, demandConsumer('consumer_good', 310, 0.1, 0.1), ['general'], 3200),
+    food: good('food', '(entfernt) Lebensmittel', '🥫', 'processed_food', {hidden: true, disabled: true}, demandOff(), ['general'], 3200),
     tomato_cans: good('tomato_cans', 'Tomatenkonserven', '🍅', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 7, wealthElasticity: 0.05, priceWealthSensitivity: 0.08, regionalVariance: 0.16}), ['general'], 2.4),
     canned_corn: good('canned_corn', 'Maiskonserven', '🌽', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 6, wealthElasticity: 0.03, priceWealthSensitivity: 0.06, regionalVariance: 0.16}), ['general'], 2.4),
     canned_peas: good('canned_peas', 'Erbsenkonserven', '🫛', 'processed_food', {}, demandCanonical('canned_food', 0.14, ['food'], 0.14, {baseDemandPer100kKg: 6, wealthElasticity: 0.03, priceWealthSensitivity: 0.06, regionalVariance: 0.16}), ['general'], 2.4),
