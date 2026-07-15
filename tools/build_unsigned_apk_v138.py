@@ -1,8 +1,9 @@
 from pathlib import Path
 import zipfile, shutil, struct, hashlib, zlib
 
+repo=Path(__file__).resolve().parents[1]
 base=Path('/mnt/data/Helvetic_Freight_Clean_v1.1.37.apk')
-html=Path('/mnt/data/Helvetic_Freight_v1.1.38_CleanApp.html')
+html=repo/'Helvetic_Freight_v1.1.38_CleanApp.html'
 out=Path('/mnt/data/Helvetic_Freight_Clean_v1.1.38_unsigned.apk')
 work=Path('/mnt/data/apk138build')
 
@@ -18,6 +19,29 @@ new_asset=work/'assets'/'Helvetic_Freig38.html'
 assert old_asset.exists(), old_asset
 old_asset.unlink()
 new_asset.write_bytes(html.read_bytes())
+
+# The clean HTML references extracted CSS/JS assets with relative paths.
+# Keep those files inside the APK so Android WebView can load the city supply
+# contract UI, source-owned city fleets, and other extracted modules offline.
+asset_dir=work/'assets'
+(asset_dir/'scripts').mkdir(parents=True, exist_ok=True)
+for rel in [
+    'Helvetic_Freight_v1.1.38_CleanApp.css',
+    'scripts/hf-app-shell.js',
+    'scripts/hf-city-catalog.js',
+    'scripts/hf-initial-state.js',
+    'scripts/hf-goods-database.js',
+    'scripts/hf-boot-state.js',
+    'scripts/hf-supply-model.js',
+    'scripts/hf-supply-planner.js',
+    'scripts/hf-supply-ui.js',
+    'scripts/hf-postboot-version.js',
+]:
+    src=repo/rel
+    dst=asset_dir/rel
+    assert src.exists(), src
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_bytes(src.read_bytes())
 
 rp=work/'resources.arsc'
 rb=rp.read_bytes()
