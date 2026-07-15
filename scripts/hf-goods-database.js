@@ -1,8 +1,7 @@
 // Central goods database for Helvetic Freight.
 //
-// This file is intentionally not wired into the HTML bootstrap yet. It provides
-// the structured data that the next migration step can feed into
-// window.HF_CONTENT.applyContentPack(...).
+// The HTML bootstrap consumes this data through window.HF_CONTENT.applyContentPack(...)
+// after its legacy content registry has been initialized.
 (function initHfGoodsDatabase(global) {
   'use strict';
 
