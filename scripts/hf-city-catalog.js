@@ -1,6 +1,819 @@
 // Central city catalog for Helvetic Freight.
-// Keep city updates here so the HTML shell stays compact and future changes remain small.
+// Keep city metadata here so the HTML shell stays compact and future changes remain small.
+// Each entry is an object so updates are self-documenting; the app still accepts legacy tuple entries.
+window.HF_CITY_CATALOG_SCHEMA = {
+  version: 2,
+  fields: ['id', 'name', 'coordinates.lat', 'coordinates.lng', 'tier', 'slots']
+};
 window.HF_CITY_CATALOG = [
-  ['zurich','Zürich',47.3769,8.5417,3,5],['winterthur','Winterthur',47.4988,8.7241,2,3],['baden','Baden',47.4738,8.3079,2,3],['aarau','Aarau',47.3904,8.0457,2,3],['olten','Olten',47.3499,7.9033,2,3],['basel','Basel',47.5596,7.5886,3,5],['liestal','Liestal',47.4845,7.7345,2,3],['sissach','Sissach',47.4645,7.8080,1,2],['solothurn','Solothurn',47.2088,7.5323,2,3],['bern','Bern',46.9480,7.4474,3,5],['thun','Thun',46.7580,7.6280,2,4],['interlaken','Interlaken',46.6863,7.8632,1,3],['spiez','Spiez',46.6847,7.6911,1,2],['fribourg','Fribourg',46.8065,7.1619,2,4],['biel','Biel/Bienne',47.1368,7.2468,2,4],['neuchatel','Neuchâtel',46.9896,6.9293,2,4],['yverdon','Yverdon',46.7785,6.6412,2,3],['lausanne','Lausanne',46.5197,6.6323,3,5],['montreux','Montreux',46.4312,6.9107,2,4],['vevey','Vevey',46.4628,6.8430,2,3],['geneva','Genève',46.2044,6.1432,3,5],['nyon','Nyon',46.3833,6.2396,2,3],['sion','Sion',46.2333,7.3606,2,4],['martigny','Martigny',46.1024,7.0724,2,3],['brig','Brig',46.3167,7.9878,2,3],['visp','Visp',46.2930,7.8820,1,3],['luzern','Luzern',47.0502,8.3093,3,5],['zug','Zug',47.1662,8.5155,2,4],['schwyz','Schwyz',47.0207,8.6527,2,3],['stans','Stans',46.9572,8.3650,1,3],['altdorf','Altdorf',46.8804,8.6444,1,3],['andermatt','Andermatt',46.6356,8.5939,1,2],['glarus','Glarus',47.0406,9.0680,1,3],['rapperswil','Rapperswil',47.2267,8.8184,2,3],['uster','Uster',47.3471,8.7209,2,3],['schaffhausen','Schaffhausen',47.6965,8.6349,2,4],['frauenfeld','Frauenfeld',47.5570,8.8988,2,3],['kreuzlingen','Kreuzlingen',47.6509,9.1750,2,3],['stgallen','St. Gallen',47.4245,9.3767,3,5],['wil','Wil',47.4664,9.0497,2,3],['herisau','Herisau',47.3862,9.2792,1,3],['appenzell','Appenzell',47.3310,9.4096,1,2],['chur','Chur',46.8508,9.5320,2,4],['landquart','Landquart',46.9671,9.5540,1,3],['davos','Davos',46.8027,9.8360,2,3],['stmoritz','St. Moritz',46.4908,9.8355,2,3],['bellinzona','Bellinzona',46.1950,9.0222,2,4],['locarno','Locarno',46.1690,8.7950,2,4],['lugano','Lugano',46.0037,8.9511,3,5],['mendrisio','Mendrisio',45.8713,8.9841,2,3],['delémont','Delémont',47.3649,7.3445,1,3],
-  ['sursee','Sursee',47.1714,8.1111,1,3],['emmen','Emmen',47.0789,8.2730,2,3],['horgen','Horgen',47.2596,8.5977,1,3],['wetzikon','Wetzikon',47.3264,8.7978,1,3],['pfaffikon','Pfäffikon SZ',47.2006,8.7780,1,3],['einsiedeln','Einsiedeln',47.1280,8.7443,1,3],['lachen','Lachen',47.1919,8.8543,1,2],['sarnen','Sarnen',46.8969,8.2450,1,3],['arthgoldau','Arth-Goldau',47.0474,8.5491,1,3],['fluelen','Flüelen',46.9030,8.6218,1,2],['airolo','Airolo',46.5286,8.6110,1,2],['sargans','Sargans',47.0482,9.4415,1,3],['badragaz','Bad Ragaz',46.9993,9.5050,1,2],['gossau','Gossau',47.4150,9.2548,2,3],['altstatten','Altstätten',47.3777,9.5475,1,3],['romanshorn','Romanshorn',47.5659,9.3787,1,3],['weinfelden','Weinfelden',47.5667,9.1081,1,3],['bulle','Bulle',46.6179,7.0569,2,3],['payerne','Payerne',46.8219,6.9384,1,3],['morges','Morges',46.5112,6.4985,1,3],['aigle','Aigle',46.3176,6.9686,1,3],['sierre','Sierre',46.2919,7.5356,2,3],['gland','Gland',46.4208,6.2705,1,3],['lachauxdefonds','La Chaux-de-Fonds',47.1036,6.8280,2,3],['moutier','Moutier',47.2782,7.3691,1,3],['porrentruy','Porrentruy',47.4173,7.0752,1,3],['chiasso','Chiasso',45.8320,9.0312,1,3],['biasca','Biasca',46.3597,8.9697,1,3],['monthey','Monthey',46.2552,6.9546,2,3],['renens','Renens',46.5399,6.5881,1,3]
+  {
+    "id": "zurich",
+    "name": "Zürich",
+    "coordinates": {
+      "lat": 47.3769,
+      "lng": 8.5417
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "winterthur",
+    "name": "Winterthur",
+    "coordinates": {
+      "lat": 47.4988,
+      "lng": 8.7241
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "baden",
+    "name": "Baden",
+    "coordinates": {
+      "lat": 47.4738,
+      "lng": 8.3079
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "aarau",
+    "name": "Aarau",
+    "coordinates": {
+      "lat": 47.3904,
+      "lng": 8.0457
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "olten",
+    "name": "Olten",
+    "coordinates": {
+      "lat": 47.3499,
+      "lng": 7.9033
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "basel",
+    "name": "Basel",
+    "coordinates": {
+      "lat": 47.5596,
+      "lng": 7.5886
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "liestal",
+    "name": "Liestal",
+    "coordinates": {
+      "lat": 47.4845,
+      "lng": 7.7345
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "sissach",
+    "name": "Sissach",
+    "coordinates": {
+      "lat": 47.4645,
+      "lng": 7.808
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "solothurn",
+    "name": "Solothurn",
+    "coordinates": {
+      "lat": 47.2088,
+      "lng": 7.5323
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "bern",
+    "name": "Bern",
+    "coordinates": {
+      "lat": 46.948,
+      "lng": 7.4474
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "thun",
+    "name": "Thun",
+    "coordinates": {
+      "lat": 46.758,
+      "lng": 7.628
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "interlaken",
+    "name": "Interlaken",
+    "coordinates": {
+      "lat": 46.6863,
+      "lng": 7.8632
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "spiez",
+    "name": "Spiez",
+    "coordinates": {
+      "lat": 46.6847,
+      "lng": 7.6911
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "fribourg",
+    "name": "Fribourg",
+    "coordinates": {
+      "lat": 46.8065,
+      "lng": 7.1619
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "biel",
+    "name": "Biel/Bienne",
+    "coordinates": {
+      "lat": 47.1368,
+      "lng": 7.2468
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "neuchatel",
+    "name": "Neuchâtel",
+    "coordinates": {
+      "lat": 46.9896,
+      "lng": 6.9293
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "yverdon",
+    "name": "Yverdon",
+    "coordinates": {
+      "lat": 46.7785,
+      "lng": 6.6412
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "lausanne",
+    "name": "Lausanne",
+    "coordinates": {
+      "lat": 46.5197,
+      "lng": 6.6323
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "montreux",
+    "name": "Montreux",
+    "coordinates": {
+      "lat": 46.4312,
+      "lng": 6.9107
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "vevey",
+    "name": "Vevey",
+    "coordinates": {
+      "lat": 46.4628,
+      "lng": 6.843
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "geneva",
+    "name": "Genève",
+    "coordinates": {
+      "lat": 46.2044,
+      "lng": 6.1432
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "nyon",
+    "name": "Nyon",
+    "coordinates": {
+      "lat": 46.3833,
+      "lng": 6.2396
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "sion",
+    "name": "Sion",
+    "coordinates": {
+      "lat": 46.2333,
+      "lng": 7.3606
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "martigny",
+    "name": "Martigny",
+    "coordinates": {
+      "lat": 46.1024,
+      "lng": 7.0724
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "brig",
+    "name": "Brig",
+    "coordinates": {
+      "lat": 46.3167,
+      "lng": 7.9878
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "visp",
+    "name": "Visp",
+    "coordinates": {
+      "lat": 46.293,
+      "lng": 7.882
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "luzern",
+    "name": "Luzern",
+    "coordinates": {
+      "lat": 47.0502,
+      "lng": 8.3093
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "zug",
+    "name": "Zug",
+    "coordinates": {
+      "lat": 47.1662,
+      "lng": 8.5155
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "schwyz",
+    "name": "Schwyz",
+    "coordinates": {
+      "lat": 47.0207,
+      "lng": 8.6527
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "stans",
+    "name": "Stans",
+    "coordinates": {
+      "lat": 46.9572,
+      "lng": 8.365
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "altdorf",
+    "name": "Altdorf",
+    "coordinates": {
+      "lat": 46.8804,
+      "lng": 8.6444
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "andermatt",
+    "name": "Andermatt",
+    "coordinates": {
+      "lat": 46.6356,
+      "lng": 8.5939
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "glarus",
+    "name": "Glarus",
+    "coordinates": {
+      "lat": 47.0406,
+      "lng": 9.068
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "rapperswil",
+    "name": "Rapperswil",
+    "coordinates": {
+      "lat": 47.2267,
+      "lng": 8.8184
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "uster",
+    "name": "Uster",
+    "coordinates": {
+      "lat": 47.3471,
+      "lng": 8.7209
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "schaffhausen",
+    "name": "Schaffhausen",
+    "coordinates": {
+      "lat": 47.6965,
+      "lng": 8.6349
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "frauenfeld",
+    "name": "Frauenfeld",
+    "coordinates": {
+      "lat": 47.557,
+      "lng": 8.8988
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "kreuzlingen",
+    "name": "Kreuzlingen",
+    "coordinates": {
+      "lat": 47.6509,
+      "lng": 9.175
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "stgallen",
+    "name": "St. Gallen",
+    "coordinates": {
+      "lat": 47.4245,
+      "lng": 9.3767
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "wil",
+    "name": "Wil",
+    "coordinates": {
+      "lat": 47.4664,
+      "lng": 9.0497
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "herisau",
+    "name": "Herisau",
+    "coordinates": {
+      "lat": 47.3862,
+      "lng": 9.2792
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "appenzell",
+    "name": "Appenzell",
+    "coordinates": {
+      "lat": 47.331,
+      "lng": 9.4096
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "chur",
+    "name": "Chur",
+    "coordinates": {
+      "lat": 46.8508,
+      "lng": 9.532
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "landquart",
+    "name": "Landquart",
+    "coordinates": {
+      "lat": 46.9671,
+      "lng": 9.554
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "davos",
+    "name": "Davos",
+    "coordinates": {
+      "lat": 46.8027,
+      "lng": 9.836
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "stmoritz",
+    "name": "St. Moritz",
+    "coordinates": {
+      "lat": 46.4908,
+      "lng": 9.8355
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "bellinzona",
+    "name": "Bellinzona",
+    "coordinates": {
+      "lat": 46.195,
+      "lng": 9.0222
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "locarno",
+    "name": "Locarno",
+    "coordinates": {
+      "lat": 46.169,
+      "lng": 8.795
+    },
+    "tier": 2,
+    "slots": 4
+  },
+  {
+    "id": "lugano",
+    "name": "Lugano",
+    "coordinates": {
+      "lat": 46.0037,
+      "lng": 8.9511
+    },
+    "tier": 3,
+    "slots": 5
+  },
+  {
+    "id": "mendrisio",
+    "name": "Mendrisio",
+    "coordinates": {
+      "lat": 45.8713,
+      "lng": 8.9841
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "delémont",
+    "name": "Delémont",
+    "coordinates": {
+      "lat": 47.3649,
+      "lng": 7.3445
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "sursee",
+    "name": "Sursee",
+    "coordinates": {
+      "lat": 47.1714,
+      "lng": 8.1111
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "emmen",
+    "name": "Emmen",
+    "coordinates": {
+      "lat": 47.0789,
+      "lng": 8.273
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "horgen",
+    "name": "Horgen",
+    "coordinates": {
+      "lat": 47.2596,
+      "lng": 8.5977
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "wetzikon",
+    "name": "Wetzikon",
+    "coordinates": {
+      "lat": 47.3264,
+      "lng": 8.7978
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "pfaffikon",
+    "name": "Pfäffikon SZ",
+    "coordinates": {
+      "lat": 47.2006,
+      "lng": 8.778
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "einsiedeln",
+    "name": "Einsiedeln",
+    "coordinates": {
+      "lat": 47.128,
+      "lng": 8.7443
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "lachen",
+    "name": "Lachen",
+    "coordinates": {
+      "lat": 47.1919,
+      "lng": 8.8543
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "sarnen",
+    "name": "Sarnen",
+    "coordinates": {
+      "lat": 46.8969,
+      "lng": 8.245
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "arthgoldau",
+    "name": "Arth-Goldau",
+    "coordinates": {
+      "lat": 47.0474,
+      "lng": 8.5491
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "fluelen",
+    "name": "Flüelen",
+    "coordinates": {
+      "lat": 46.903,
+      "lng": 8.6218
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "airolo",
+    "name": "Airolo",
+    "coordinates": {
+      "lat": 46.5286,
+      "lng": 8.611
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "sargans",
+    "name": "Sargans",
+    "coordinates": {
+      "lat": 47.0482,
+      "lng": 9.4415
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "badragaz",
+    "name": "Bad Ragaz",
+    "coordinates": {
+      "lat": 46.9993,
+      "lng": 9.505
+    },
+    "tier": 1,
+    "slots": 2
+  },
+  {
+    "id": "gossau",
+    "name": "Gossau",
+    "coordinates": {
+      "lat": 47.415,
+      "lng": 9.2548
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "altstatten",
+    "name": "Altstätten",
+    "coordinates": {
+      "lat": 47.3777,
+      "lng": 9.5475
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "romanshorn",
+    "name": "Romanshorn",
+    "coordinates": {
+      "lat": 47.5659,
+      "lng": 9.3787
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "weinfelden",
+    "name": "Weinfelden",
+    "coordinates": {
+      "lat": 47.5667,
+      "lng": 9.1081
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "bulle",
+    "name": "Bulle",
+    "coordinates": {
+      "lat": 46.6179,
+      "lng": 7.0569
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "payerne",
+    "name": "Payerne",
+    "coordinates": {
+      "lat": 46.8219,
+      "lng": 6.9384
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "morges",
+    "name": "Morges",
+    "coordinates": {
+      "lat": 46.5112,
+      "lng": 6.4985
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "aigle",
+    "name": "Aigle",
+    "coordinates": {
+      "lat": 46.3176,
+      "lng": 6.9686
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "sierre",
+    "name": "Sierre",
+    "coordinates": {
+      "lat": 46.2919,
+      "lng": 7.5356
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "gland",
+    "name": "Gland",
+    "coordinates": {
+      "lat": 46.4208,
+      "lng": 6.2705
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "lachauxdefonds",
+    "name": "La Chaux-de-Fonds",
+    "coordinates": {
+      "lat": 47.1036,
+      "lng": 6.828
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "moutier",
+    "name": "Moutier",
+    "coordinates": {
+      "lat": 47.2782,
+      "lng": 7.3691
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "porrentruy",
+    "name": "Porrentruy",
+    "coordinates": {
+      "lat": 47.4173,
+      "lng": 7.0752
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "chiasso",
+    "name": "Chiasso",
+    "coordinates": {
+      "lat": 45.832,
+      "lng": 9.0312
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "biasca",
+    "name": "Biasca",
+    "coordinates": {
+      "lat": 46.3597,
+      "lng": 8.9697
+    },
+    "tier": 1,
+    "slots": 3
+  },
+  {
+    "id": "monthey",
+    "name": "Monthey",
+    "coordinates": {
+      "lat": 46.2552,
+      "lng": 6.9546
+    },
+    "tier": 2,
+    "slots": 3
+  },
+  {
+    "id": "renens",
+    "name": "Renens",
+    "coordinates": {
+      "lat": 46.5399,
+      "lng": 6.5881
+    },
+    "tier": 1,
+    "slots": 3
+  }
 ];
