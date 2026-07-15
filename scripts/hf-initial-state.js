@@ -1,5 +1,5 @@
 // Structured initial save package for Helvetic Freight.
-// Keep first-run state changes here so the HTML shell stays small and easy to review.
+// Cities intentionally start without stock or buildings; runtime defaults add all goods with 0 stock.
 window.HF_INITIAL_STATE_PACKAGE = {
   "schemaVersion": 1,
   "buildVersion": "1.1.22",
@@ -18,34 +18,8 @@ window.HF_INITIAL_STATE_PACKAGE = {
     "cities": {
       "zurich": {
         "unlocked": true,
-        "inventory": {
-          "grain": 8000,
-          "wood": 6000,
-          "ore": 4000,
-          "chemicals": 3300,
-          "food": 4000,
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
-        "facilities": [
-          "farm"
-        ],
+        "inventory": {},
+        "facilities": [],
         "demands": {
           "tomatoes": {
             "need": 630.667,
@@ -139,34 +113,11 @@ window.HF_INITIAL_STATE_PACKAGE = {
           }
         },
         "sales": 0,
-        "facilityConfigs": [
-          {
-            "productionLevel": 1
-          }
-        ]
+        "facilityConfigs": []
       },
       "winterthur": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -265,26 +216,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "baden": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "potatoes": {
@@ -383,26 +315,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "aarau": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -501,26 +414,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "olten": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -619,26 +513,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "basel": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -743,26 +618,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "liestal": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -861,26 +717,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "solothurn": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "fish": {
@@ -979,26 +816,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "bern": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -1097,26 +915,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "thun": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "ravioli_meat": {
@@ -1215,26 +1014,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "interlaken": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -1333,26 +1113,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "spiez": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -1445,26 +1206,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "fribourg": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -1563,26 +1305,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "biel": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -1687,26 +1410,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "neuchatel": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomatoes": {
@@ -1799,26 +1503,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "yverdon": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -1923,26 +1608,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "lausanne": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "fish": {
@@ -2041,26 +1707,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "montreux": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -2165,26 +1812,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "vevey": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tools": {
@@ -2289,26 +1917,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "geneva": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tools": {
@@ -2407,26 +2016,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "nyon": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -2525,26 +2115,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "sion": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -2643,26 +2214,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "martigny": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -2767,26 +2319,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "brig": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "fish": {
@@ -2879,26 +2412,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "visp": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -2997,26 +2511,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "luzern": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -3115,26 +2610,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "zug": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -3233,26 +2709,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "schwyz": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -3357,26 +2814,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "stans": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tools": {
@@ -3475,26 +2913,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "altdorf": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "medicine": {
@@ -3593,26 +3012,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "andermatt": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -3717,26 +3117,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "glarus": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "ravioli_veg": {
@@ -3835,26 +3216,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "rapperswil": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "potatoes": {
@@ -3953,26 +3315,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "uster": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "fish": {
@@ -4065,26 +3408,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "schaffhausen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "pork": {
@@ -4183,26 +3507,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "frauenfeld": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -4301,26 +3606,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "kreuzlingen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -4425,26 +3711,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "stgallen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "ravioli_veg": {
@@ -4537,26 +3804,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "wil": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -4655,26 +3903,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "herisau": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "medicine": {
@@ -4779,26 +4008,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "appenzell": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "pork": {
@@ -4897,26 +4107,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "chur": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -5015,26 +4206,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "landquart": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "apples": {
@@ -5127,26 +4299,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "davos": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "ravioli_meat": {
@@ -5251,26 +4404,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "stmoritz": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -5375,26 +4509,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "bellinzona": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -5493,26 +4608,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "locarno": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "fish": {
@@ -5611,26 +4707,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "lugano": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -5735,26 +4812,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "mendrisio": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -5859,26 +4917,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "delémont": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "pork": {
@@ -5971,26 +5010,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "sursee": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "medicine": {
@@ -6089,26 +5109,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "emmen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "zucchini": {
@@ -6201,26 +5202,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "horgen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "medicine": {
@@ -6319,26 +5301,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "wetzikon": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "medicine": {
@@ -6437,26 +5400,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "pfaffikon": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -6549,26 +5493,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "einsiedeln": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -6673,26 +5598,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "lachen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "potatoes": {
@@ -6785,26 +5691,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "sarnen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -6909,26 +5796,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "arthgoldau": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -7027,26 +5895,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "fluelen": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "zucchini": {
@@ -7139,26 +5988,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "airolo": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "potatoes": {
@@ -7251,26 +6081,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "sargans": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -7369,26 +6180,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "badragaz": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tools": {
@@ -7487,26 +6279,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "gossau": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "furniture": {
@@ -7605,26 +6378,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "altstatten": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -7723,26 +6477,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "romanshorn": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "potatoes": {
@@ -7835,26 +6570,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "weinfelden": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "electronics": {
@@ -7953,26 +6669,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "bulle": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "ravioli_meat": {
@@ -8071,26 +6768,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "payerne": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "fish": {
@@ -8189,26 +6867,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "morges": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "pork": {
@@ -8301,26 +6960,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "aigle": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "pork": {
@@ -8419,26 +7059,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "sierre": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomato_cans": {
@@ -8537,26 +7158,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "gland": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -8649,26 +7251,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "lachauxdefonds": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "clothing": {
@@ -8773,26 +7356,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "moutier": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "pork": {
@@ -8885,26 +7449,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "porrentruy": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "food": {
@@ -9003,26 +7548,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "chiasso": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tomatoes": {
@@ -9121,26 +7647,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "biasca": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "tools": {
@@ -9245,26 +7752,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "monthey": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "zucchini": {
@@ -9357,26 +7845,7 @@ window.HF_INITIAL_STATE_PACKAGE = {
       },
       "renens": {
         "unlocked": false,
-        "inventory": {
-          "fish": 0,
-          "pigs": 0,
-          "pork": 0,
-          "tomatoes": 0,
-          "aluminum": 0,
-          "cans": 0,
-          "ravioli_meat": 0,
-          "ravioli_veg": 0,
-          "aluminum_ore": 0,
-          "zucchini": 0,
-          "apples": 0,
-          "potatoes": 0,
-          "tomato_cans": 0,
-          "corn": 0,
-          "canned_corn": 0,
-          "pears": 0,
-          "peas": 0,
-          "canned_peas": 0
-        },
+        "inventory": {},
         "facilities": [],
         "demands": {
           "apples": {
